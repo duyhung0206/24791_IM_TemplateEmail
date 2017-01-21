@@ -54,7 +54,7 @@ class Magestore_Inventoryplus_Block_Adminhtml_Stock_Edit extends Mage_Adminhtml_
         );
 
         /* Quick adjust stock button */
-        $this->_updateButton('save', 'label', Mage::helper('inventoryplus')->__('Update Stock In-grid'));
+        $this->_updateButton('save', 'label', Mage::helper('inventoryplus')->__('Update Grid'));
         $this->_updateButton('save', 'onclick', 'IMmassUpdateStock()');
         $this->_updateButton('save', 'area', 'after_header');
         /* End of Qucik adjust stock button */

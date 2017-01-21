@@ -569,5 +569,4 @@ class Magestore_Inventorypurchasing_Block_Adminhtml_Purchaseorder_Edit_Tab_Produ
     public function getRowUrl($row) {
         return false;
     }
-
 }

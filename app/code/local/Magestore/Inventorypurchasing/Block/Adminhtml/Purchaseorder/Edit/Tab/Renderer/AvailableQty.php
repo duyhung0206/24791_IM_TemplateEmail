@@ -42,7 +42,7 @@ class Magestore_Inventorypurchasing_Block_Adminhtml_Purchaseorder_Edit_Tab_Rende
 
        	$availableQty = 0 + $warehouse_product->getAvailableQty();
         
-	return '<input name="warehouse_' . $warehouseId . '" class="input-text" type="text" value="" onkeyup="updatekai(this.value)" /><br/>'.Mage::helper('inventorypurchasing')->__('Avail. Qty: ') . $availableQty;
+	return '<input id ="peter" name="warehouse_' . $warehouseId . '" class="input-text" type="text" value="" onchange="updatekai(this.value)" /><br/>'.Mage::helper('inventorypurchasing')->__('Avail. Qty: ') . $availableQty;
         
 
     }

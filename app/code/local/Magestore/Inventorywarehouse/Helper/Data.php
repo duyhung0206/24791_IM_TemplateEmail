@@ -186,7 +186,7 @@ class Magestore_Inventorywarehouse_Helper_Data extends Magestore_Inventoryplus_H
     }
 
     //edit by simon
-    public function sendMailToNotifyWarehouseAdmin($order){
+    public function sendMailToNotifyWarehouseAdmin($order, $url_shipment){
         $templateId = Mage::getStoreConfig('inventoryplus/warehouse/email_notify_to_admin_warehouse', $order->getStoreId());
         $mailTemplate = Mage::getModel('core/email_template');
 
@@ -220,16 +220,15 @@ class Magestore_Inventorywarehouse_Helper_Data extends Magestore_Inventoryplus_H
 //
 //         }
 
-        /*$email = 'Simon@localhost';
+       /* $email = 'Simon@localhost';
         $emailName = 'Simon';*/
         $warehouse = Mage::getModel('inventoryplus/warehouse')->getCollection()
             ->addFieldToFilter('warehouse_id', 1)
             ->getFirstItem();
-        $email = $warehouse->getManagerEmail();
+        $email = $warehouse->getOtherEmail();
         $emailName = $warehouse->getManagerName();
         $vars = Array();
-        $url_shipment = Mage::helper('adminhtml')->getUrl('adminhtml/ins_inventoryshipment/index/');
-        $vars = Array('order'=>$order, 'url_shipment'=>$url_shipment);
+        $vars = Array('order'=>$order, 'link'=>$url_shipment);
         $storeId = $order->getStoreId();
         $translate = Mage::getSingleton('core/translate');
         Mage::getSingleton('core/email_template')

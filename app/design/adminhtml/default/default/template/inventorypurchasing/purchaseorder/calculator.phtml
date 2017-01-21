@@ -1,0 +1,21 @@
+<?php //if(!Mage::helper('inventory/purchaseorder')->haveDelivery()):  ?>
+<?php if (!$this->getRequest()->getParam('id')): ?>
+
+    <div class="fieldset" style = "width: 300px; float:right; background: #ebebeb; font-weight: bold; " >
+        <table>
+            <tr>
+                <td>
+                    <span>Total Qty Ordering </span> : <span id = "kai_dev_qty"> 0 </span></br>
+                    <span>Total Cost </span> : <span id = "kai_dev_price"> 0 </span></br>
+                </td>
+                <td style=" width : 50px; float:right;">
+                    <button onclick="updatekai(this)" type="button" ><span><?php echo $this->__('Refresh') ?></span></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <?php
+ endif ?>
+
+
+

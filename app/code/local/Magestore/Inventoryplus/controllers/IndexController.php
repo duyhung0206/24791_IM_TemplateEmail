@@ -15,6 +15,10 @@ class Magestore_Inventoryplus_IndexController extends Mage_Core_Controller_Front
 //        $product->getResource()->saveAttribute($product, 'fnsku');
 ////        $product->setAttributeText('fnsku','testt11111')->save();
 //        Zend_Debug::dump(Mage::getResourceModel('catalog/product')->getAttributeRawValue($product->getId(), 'fnsku', 1)) ;
-        die();
+        $warehouse = Mage::getModel('inventoryplus/warehouse')->getCollection()
+            ->addFieldToFilter('warehouse_id', 1)
+            ->getFirstItem();
+        zend_debug::dump($warehouse->getData());
+        die('Simon');
     }
 }

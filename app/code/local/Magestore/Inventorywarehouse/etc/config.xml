@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Magestore_Inventorywarehouse>
-            <version>0.1.2</version>
+            <version>0.1.3</version>
         </Magestore_Inventorywarehouse>
     </modules>
     <frontend>

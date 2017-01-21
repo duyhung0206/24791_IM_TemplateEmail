@@ -131,9 +131,12 @@ class Magestore_Inventorywarehouse_Model_Observer
             return;
         Mage::register('INVENTORY_CORE_ORDER_PLACE', true);
         $order = $observer->getOrder();
-        //edit by simon
-        /*send email to admin warehouse*/
-        Mage::helper('inventorywarehouse')->sendMailToNotifyWarehouseAdmin($order);
+        $order_id = $order->getId();
+        $url_shipment = Mage::helper('adminhtml')
+            ->getUrl(
+                'adminhtml/sales_order_shipment/new',
+                array('order_id' => $order_id));
+        Mage::helper('inventorywarehouse')->sendMailToNotifyWarehouseAdmin($order, $url_shipment);
         //end edit by simon
 
         if (Mage::app()->getStore()->isAdmin()) {

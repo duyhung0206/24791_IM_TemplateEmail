@@ -200,6 +200,15 @@ class Magestore_Inventoryplus_Block_Adminhtml_Warehouse_Edit_Tab_Form extends Ma
             'values' => Mage::getSingleton('inventoryplus/status')->getOptionHash(),
         ));
 
+        /*edit by simon*/
+        $fieldset->addField('other_email', 'text', array(
+            'label' => Mage::helper('inventoryplus')->__('Other Email'),
+            'name' => 'other_email',
+            'required' => false,
+            /*'disabled' => $readonly,*/
+        ));
+        /*end edit by simon*/
+
         $form->setValues($data);
         Mage::dispatchEvent('warehouse_edit_tab_form',array('block' => $this));
         return parent::_prepareForm();

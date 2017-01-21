@@ -202,7 +202,8 @@
             <block type="inventorypurchasing/adminhtml_purchaseorder_edit_tab_returnorder" name="inventorypurchasing.purchaseorder.edit.tab.returnorder"/>
         </block>
     </adminhtml_inpu_purchaseorders_returnordergrid>
-    
+
+
     <adminhtml_inpu_purchaseorders_product>
         <block type="core/text_list" name="root">
             <block type="inventorypurchasing/adminhtml_purchaseorder" name="csv_form" template="inventorypurchasing/purchaseorder/importproduct.phtml" />
@@ -218,8 +219,11 @@
                     <input_name>qty_order</input_name>
                 </action>
             </block>
+            <block type="inventorypurchasing/adminhtml_purchaseorder" name="calculator" template="inventorypurchasing/purchaseorder/calculator.phtml" />
         </block>
     </adminhtml_inpu_purchaseorders_product>
+
+
     <adminhtml_inpu_purchaseorders_productgrid>
         <block type="core/text_list" name="root">
             <block type="inventorypurchasing/adminhtml_purchaseorder_edit_tab_products" name="inventorypurchasing.purchaseorder.edit.tab.products"/>
